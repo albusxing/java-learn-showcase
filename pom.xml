@@ -20,6 +20,12 @@
         <module>elasticsearch</module>
         <module>spring-cloud-alibaba</module>
         <module>mybatis</module>
+        <module>jvm</module>
+        <module>design-patterns</module>
+        <module>data-structure</module>
+        <module>algorithm</module>
+        <module>rabbitmq</module>
+        <module>redis</module>
     </modules>
 
 
