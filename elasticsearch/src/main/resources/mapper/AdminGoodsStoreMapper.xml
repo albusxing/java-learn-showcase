@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ruyuan.little.project.elasticsearch.biz.admin.mapper.AdminGoodsStoreMapper">
+
+    <select id="countStorePageByStoreName" resultType="integer">
+        select count(1) from t_goods_store where 1=1
+        <if test="storeName != null and storeName !=''">
+            and store_name like concat('%', #{storeName},'%')
+        </if>
+    </select>
+
+    <select id="getStorePageByStoreName"
+            resultType="com.ruyuan.little.project.elasticsearch.biz.admin.entity.AdminGoodsStore">
+        select * from t_goods_store
+        <where>
+            <if test="storeName != null and storeName !=''">
+                and store_name like concat('%', #{storeName},'%')
+            </if>
+        </where>
+        limit #{start},#{size}
+
+    </select>
+
+</mapper>

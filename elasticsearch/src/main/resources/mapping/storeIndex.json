@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "storeName": {
+      "type": "text",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "storeIntroduction": {
+      "type": "text"
+    },
+    "storeBrand": {
+      "type": "text"
+    },
+    "openDate": {
+      "type": "date"
+    },
+    "storePhoto": {
+      "type": "keyword"
+    },
+    "storeTags": {
+      "type": "text"
+    }
+  }
+}

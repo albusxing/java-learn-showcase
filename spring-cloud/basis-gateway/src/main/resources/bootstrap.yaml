@@ -1,0 +1,57 @@
+spring :
+  servlet :
+    multipart :
+      max-file-size : 50MB       #单文件限制大小
+      max-request-size : 50MB   #总文件限制的大小
+
+  application:
+    name: basis-gateway
+  main:
+    allow-bean-definition-overriding: true
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: /static
+
+
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 127.0.0.1:8848
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true # gateway可以通过开启以下配置来打开根据服务的serviceId来匹配路由,默认是大写
+      routes: # 路由数组[路由 就是指定当请求满足什么条件的时候转到哪个微服务]
+        - id: nx-gateway    # 当前路由的标识, 要求唯一
+          uri: lb://nx-customer # 请求要转发到的地址  lb指的是从nacos中按照名称获取微服务,并遵循负载均衡策略
+          order: 3 # 路由的优先级,数字越小级别越高
+          predicates: # 断言(就是路由转发要满足的条件)
+            - Path=/** # 当请求路径满足Path指定的规则时,才进行路由转发
+#            - Path=/api/** # 当请求路径满足Path指定的规则时,才进行路由转发
+#            - Before=2021-03-22T22:00:00+08:00 #限制请求必须在该时间之前 过期后访问返回404错误
+#            - Method=POST
+            - CheckAuth=kojon #自定义断言 错误返回 There was an unexpected error
+#          filters:
+#            - RewritePath=/(?<segment>.*), /$\{segment} #作用：原路径是  /api/xxx 通过过滤器之后就变成了 /xxx
+
+    sentinel:
+      filter :
+        enabled: false # 网关流控控制台上是否可以看到 URL 资源
+      transport:
+        clientIp: 192.168.152.106
+        port: 8888 #跟控制台通讯的端口
+        dashboard: localhost:9090 # 指定控制台服务的地址
+#      # 服务启动直接建立心跳连接
+#      eager: true
+  zipkin:
+    base-url: http://localhost:9411/  #zipkin server的请求地址
+    discovery-client-enabled: false   #让nacos把它当成一个URL，而不要当做服务名
+  sleuth :
+    sampler :
+      probability: 1 #采样的百分比
+
+server:
+  max-http-header-size: 10485760

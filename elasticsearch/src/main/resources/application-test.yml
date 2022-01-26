@@ -1,0 +1,8 @@
+server:
+      # 端口
+      port: 8091
+
+# elasticsearch相关配置信息
+elasticsearch:
+      # 集群节点，多个节点采用逗号分隔，需要替换为ecs的ip
+      clusterNodes: localhost:9200

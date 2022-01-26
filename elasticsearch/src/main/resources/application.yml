@@ -1,0 +1,69 @@
+server:
+      # 端口
+      port: 8091
+
+# 数据库配置
+spring:
+      datasource:
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/elasticsearch?useUnicode=true&serverTimezone=GMT&characterEncoding=utf8&useOldAliasMetadataBehavior=true&allowMultiQueries=true
+            username: root
+            password: root
+
+# mybatis的相关配置
+mybatis:
+      # mapper配置文件
+      mapper-locations: classpath:mapper/*.xml
+      # 实体类别名
+      type-aliases-package: com.ruyuan.little.project.elasticsearch.biz.admin.dto
+      # 开启驼峰命名
+      configuration:
+            map-underscore-to-camel-case: true
+
+
+# xxl-job 相关配置
+xxl:
+      job:
+            # xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
+            admin:
+                  addresses: http://127.0.0.1:8090/xxl-job-admin
+            # xxl-job, access token
+            accessToken:
+            executor:
+                  # xxl-job executor appname
+                  appname: xxl-job-executor-elasticsearch
+                  # xxl-job executor registry-address: default use address to registry , otherwise use ip:port if address is null
+                  address:
+                  # xxl-job executor server-info
+                  ip:
+                  port: 9999
+                  # xxl-job executor log-path
+                  logpath: /home/admin/little-project-elasticsearch/logs/jobhandler
+                  # xxl-job executor log-retention-days
+                  logretentiondays: 30
+
+
+# elasticsearch相关配置信息
+elasticsearch:
+      # 集群节点，多个节点采用逗号分隔
+      clusterNodes: localhost:9200
+      # 店铺index别名
+      storeIndexAlias: store_index
+      # 店铺index名称
+      storeIndex: store_index_v1
+      # 商品index别名
+      goodsIndexAlias: goods_index
+      # 商品index名称
+      goodsIndex: goods_index_v2
+      # 订单index别名
+      orderIndexAlias: order_index
+      # 订单index名称
+      orderIndex: order_index_v1
+      # scroll查询失效时间，单位：秒
+      scrollExpireSeconds: 60
+      # 自动上架每次查询数据条数
+      autoOnlinePageSize: 10
+      # mapping资源路径
+      resourcePath: /home/admin/little-project-elasticsearch/resource/
+      # 不使用fuzzy查询的最小值
+      notUsedFuzzyMinCount: 1

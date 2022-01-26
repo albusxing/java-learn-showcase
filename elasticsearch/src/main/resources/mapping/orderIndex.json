@@ -1,0 +1,77 @@
+{
+  "properties" : {
+    "createTime" : {
+      "type" : "date",
+      "format" : "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+    },
+    "goodsColor" : {
+      "type" : "keyword"
+    },
+    "goodsMemoryCapacity" : {
+      "type" : "keyword"
+    },
+    "goodsName":{
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "suggest":{
+          "type":"completion",
+          "analyzer": "ik_max_word"
+        },
+        "keyword":{
+          "type" : "keyword"
+        }
+      }
+    },
+    "goodsPrice" : {
+      "type" : "float"
+    },
+    "goodsSkuId" : {
+      "type" : "keyword"
+    },
+    "goodsSpuId" : {
+      "type" : "keyword"
+    },
+    "goodsSpuNo" : {
+      "type" : "keyword"
+    },
+    "goodsStoreId" : {
+      "type" : "keyword"
+    },
+    "id" : {
+      "type" : "keyword"
+    },
+    "payAmount" : {
+      "type" : "float"
+    },
+    "payCount" : {
+      "type" : "long"
+    },
+    "payTime" : {
+      "type" : "date",
+      "format" : "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+    },
+    "phoneNumber" : {
+      "type" : "keyword"
+    },
+    "status" : {
+      "type" : "keyword"
+    },
+    "storeName" : {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "suggest":{
+          "type":"completion",
+          "analyzer": "ik_max_word"
+        },
+        "keyword":{
+          "type" : "keyword"
+        }
+      }
+    },
+    "totalPrices" : {
+      "type" : "float"
+    }
+  }
+}

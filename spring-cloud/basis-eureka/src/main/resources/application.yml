@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: basis-eureka
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1    #指定主机地址
+  client:
+    fetch-registry: false # 是否从注册中心获取服务 （注册中心本身不需要）
+    register-with-eureka: false # 是否注册到注册中心 （注册中心本身不需要）
+  server:
+    enable-self-preservation: false # 关闭自我保护模式

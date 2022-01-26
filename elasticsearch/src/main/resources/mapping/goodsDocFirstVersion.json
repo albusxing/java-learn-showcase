@@ -1,0 +1,236 @@
+{
+  "goodsStore" : [
+    {
+      "id":"1",
+      "storeName":"小米销售店",
+      "storeIntroduction":"小米手机销售店",
+      "openDate":"2021-05-01",
+      "storeBrand":"小米",
+      "storePhoto":"https://img10.360buyimg.com/imgzone/jfs/t17752/324/262367977/74875/fd9a74db/5a65c544N9fcaf6f7.png",
+      "storeTags":["手机通信","电子产品"],
+      "goodsRelationField": "goodsStore"
+    },
+    {
+      "id":"2",
+      "storeName":"华为销售店",
+      "storeIntroduction":"华为手机销售店",
+      "openDate":"2021-06-01",
+      "storeBrand":"华为",
+      "storePhoto":"https://img10.360buyimg.com/imgzone/jfs/t17752/324/262367977/74875/fd9a74db/5a65c544N9fcaf6f7.png",
+      "storeTags":["手机通信","电子产品"],
+      "goodsRelationField": "goodsStore"
+    },
+    {
+      "id":"3",
+      "storeName":"苹果销售店",
+      "storeIntroduction":"苹果手机销售店",
+      "openDate":"2021-06-01",
+      "storeBrand":"苹果",
+      "storePhoto":"https://img10.360buyimg.com/imgzone/jfs/t17752/324/262367977/74875/fd9a74db/5a65c544N9fcaf6f7.png",
+      "storeTags":["手机通信","电子产品"],
+      "goodsRelationField": "goodsStore"
+    }
+  ],
+  "goodsSpu": [
+    {
+      "id":"4",
+      "routing": "1",
+      "goodsStatus":"1",
+      "onlineTime":"2021-07-01 00:00:00",
+      "goodsName": "小米手机10",
+      "goodsSpuNo":"a840d9e61f844a57ad6c9cf750514b53",
+      "goodsTags":["手机"],
+      "goodsPictures":["http://img10.360buyimg.com/n1/s450x450_jfs/t1/132022/23/12216/60913/5f86195bEacd08599/c5dc348d3f943324.jpg","http://img10.360buyimg.com/n1/s450x450_jfs/t1/162061/16/20103/233196/607f90fbE2d658618/37592bef295388ac.jpg"],
+      "goodsRelationField":{
+        "name": "goodsSpu" ,
+        "parent":"1"
+      }
+    },
+    {
+      "id":"5",
+      "routing": "2",
+      "goodsStatus":"1",
+      "onlineTime":"2021-07-01 00:00:00",
+      "goodsName": "华为mate40",
+      "goodsSpuNo":"a93610178795440ca0cb19958ac6b849",
+      "goodsTags":["手机"],
+      "goodsPictures":["http://img10.360buyimg.com/n1/s450x450_jfs/t1/132022/23/12216/60913/5f86195bEacd08599/c5dc348d3f943324.jpg","http://img10.360buyimg.com/n1/s450x450_jfs/t1/162061/16/20103/233196/607f90fbE2d658618/37592bef295388ac.jpg"],
+      "goodsRelationField":{
+        "name": "goodsSpu" ,
+        "parent":"2"
+      }
+    },
+    {
+      "id":"6",
+      "routing": "3",
+      "goodsStatus":"1",
+      "onlineTime":"2021-07-01 00:00:00",
+      "goodsName": "apple iPhone 12",
+      "goodsSpuNo":"a93610178795440ca0cb19958ac6b865",
+      "goodsTags":["手机"],
+      "goodsPictures":["http://img10.360buyimg.com/n1/s450x450_jfs/t1/132022/23/12216/60913/5f86195bEacd08599/c5dc348d3f943324.jpg","http://img10.360buyimg.com/n1/s450x450_jfs/t1/162061/16/20103/233196/607f90fbE2d658618/37592bef295388ac.jpg"],
+      "goodsRelationField":{
+        "name": "goodsSpu" ,
+        "parent":"3"
+      }
+    }
+  ],
+  "goodsSku": [
+    {
+      "id":"7",
+      "routing": "1",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"3588",
+      "goodsSaleNum":"29",
+      "goodsRemainNum":"71",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"4"
+      }
+    },
+    {
+      "id":"8",
+      "routing": "1",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"4088",
+      "goodsSaleNum":"32",
+      "goodsRemainNum":"68",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"4"
+      }
+    },
+    {
+      "id":"9",
+      "routing": "1",
+      "goodsColor": "银色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"3588",
+      "goodsSaleNum":"50",
+      "goodsRemainNum":"50",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"4"
+      }
+    },
+    {
+      "id":"10",
+      "routing": "1",
+      "goodsColor": "银色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"4088",
+      "goodsSaleNum":"36",
+      "goodsRemainNum":"64",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"4"
+      }
+    },
+    {
+      "id":"11",
+      "routing": "2",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"3888",
+      "goodsSaleNum":"18",
+      "goodsRemainNum":"82",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"5"
+      }
+    },
+    {
+      "id":"12",
+      "routing": "2",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"4388",
+      "goodsSaleNum":"30",
+      "goodsRemainNum":"70",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"5"
+      }
+    },
+    {
+      "id":"13",
+      "routing": "2",
+      "goodsColor": "蓝色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"3888",
+      "goodsSaleNum":"33",
+      "goodsRemainNum":"67",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"5"
+      }
+    },
+    {
+      "id":"14",
+      "routing": "2",
+      "goodsColor": "蓝色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"4388",
+      "goodsSaleNum":"17",
+      "goodsRemainNum":"83",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"5"
+      }
+    },
+    {
+      "id":"15",
+      "routing": "3",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"4688",
+      "goodsSaleNum":"39",
+      "goodsRemainNum":"61",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"6"
+      }
+    },
+    {
+      "id":"16",
+      "routing": "3",
+      "goodsColor": "白色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"5188",
+      "goodsSaleNum":"31",
+      "goodsRemainNum":"69",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"6"
+      }
+    },
+    {
+      "id":"17",
+      "routing": "3",
+      "goodsColor": "蓝色",
+      "goodsMemoryCapacity":"128GB",
+      "goodsPrice":"4688",
+      "goodsSaleNum":"27",
+      "goodsRemainNum":"73",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"6"
+      }
+    },
+    {
+      "id":"18",
+      "routing": "3",
+      "goodsColor": "蓝色",
+      "goodsMemoryCapacity":"256GB",
+      "goodsPrice":"5188",
+      "goodsSaleNum":"24",
+      "goodsRemainNum":"76",
+      "goodsRelationField":{
+        "name": "goodsSku" ,
+        "parent":"6"
+      }
+    }
+  ]
+}

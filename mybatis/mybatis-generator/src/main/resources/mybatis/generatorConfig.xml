@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!--配置外部的属性元素-->
+    <!--    <properties></properties>-->
+    <properties resource="db.properties"/>
+
+    <!--指定类路径-->
+    <!--<classPathEntry location=""/>-->
+
+    <!-- 环境配置 -->
+    <!--  flat：一张表一个实体 ; MyBatis3Simple : 不生成和 Example 相关的代码 -->
+    <context id="MySqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <!--配置 mysql 表的分隔符-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!--注释信息的配置-->
+        <commentGenerator>
+            <!-- 不生成注释 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库连接-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="${db.url}"
+                        userId="${db.username}"
+                        password="${db.password}">
+        </jdbcConnection>
+
+        <!--生成的实体类-->
+        <javaModelGenerator targetPackage="com.albusxing.showcase.entity" targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--sql mapper xml 文件-->
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources"/>
+
+        <!--java mapper 接口的路径-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.albusxing.showcase.mapper"
+                             targetProject="src/main/java"/>
+
+        <!--        <table tableName="%">-->
+        <!--            <generatedKey column="id" sqlStatement="MySql"/>-->
+        <!--        </table>-->
+
+        <table tableName="sys_user" domainObjectName="SysUser"></table>
+        <table tableName="sys_user_role" domainObjectName="SysUserRole"></table>
+        <table tableName="sys_role" domainObjectName="SysRole"></table>
+        <table tableName="sys_privilege" domainObjectName="SysPrivilege"></table>
+        <table tableName="sys_role_privilege" domainObjectName="SysRolePrivilege"></table>
+
+    </context>
+
+</generatorConfiguration>

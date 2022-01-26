@@ -1,0 +1,86 @@
+{
+  "properties" : {
+    "goodsColor" : {
+      "type" : "keyword"
+    },
+    "goodsCommentCount" : {
+      "type" : "integer"
+    },
+    "goodsMemoryCapacity" : {
+      "type" : "keyword"
+    },
+    "goodsName":{
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "fields": {
+        "suggest":{
+          "type":"completion",
+          "analyzer": "ik_max_word"
+        },
+        "keyword":{
+          "type" : "keyword"
+        }
+      }
+    },
+    "goodsPictures" : {
+      "type" : "keyword"
+    },
+    "goodsPrice" : {
+      "type" : "double"
+    },
+    "goodsRelationField" : {
+      "type" : "join",
+      "eager_global_ordinals" : true,
+      "relations" : {
+        "goodsStore" : "goodsSpu",
+        "goodsSpu" : "goodsSku"
+      }
+    },
+    "goodsRemainNum" : {
+      "type" : "integer"
+    },
+    "goodsSaleNum" : {
+      "type" : "integer"
+    },
+    "goodsSpuNo" : {
+      "type" : "keyword"
+    },
+    "goodsStatus" : {
+      "type" : "integer"
+    },
+    "goodsTags" : {
+      "type" : "text"
+    },
+    "id" : {
+      "type" : "keyword"
+    },
+    "onlineTime" : {
+      "type" : "date",
+      "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+    },
+    "openDate" : {
+      "type" : "date"
+    },
+    "storeBrand" : {
+      "type" : "text"
+    },
+    "storeIntroduction" : {
+      "type" : "text"
+    },
+    "storeName" : {
+      "type" : "text",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "storePhoto" : {
+      "type" : "keyword"
+    },
+    "storeTags" : {
+      "type" : "text"
+    }
+  }
+}
